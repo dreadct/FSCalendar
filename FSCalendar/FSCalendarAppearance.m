@@ -119,6 +119,14 @@
     }
 }
 
+- (void)setHeaderTitleInsets:(UIEdgeInsets)headerTitleInsets
+{
+    if (!UIEdgeInsetsEqualToEdgeInsets(_headerTitleInsets, headerTitleInsets)) {
+        _headerTitleInsets = headerTitleInsets;
+        [self.calendar configureAppearance];
+    }
+}
+
 - (void)setTitleOffset:(CGPoint)titleOffset
 {
     if (!CGPointEqualToPoint(_titleOffset, titleOffset)) {
