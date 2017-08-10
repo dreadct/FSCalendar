@@ -59,6 +59,11 @@ typedef NS_OPTIONS(NSUInteger, FSCalendarCaseOptions) {
 @property (strong, nonatomic) UIFont   *weekdayFont;
 
 /**
+ * The alignment of the month text.
+ */
+@property (assign, nonatomic) NSTextAlignment headerTitleAlignment;
+
+/**
  * The font of the month text.
  */
 @property (strong, nonatomic) UIFont   *headerTitleFont;

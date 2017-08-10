@@ -103,6 +103,14 @@
     }
 }
 
+- (void)setHeaderTitleAlignment:(NSTextAlignment)headerTitleAlignment
+{
+    if (_headerTitleAlignment != headerTitleAlignment) {
+        _headerTitleAlignment = headerTitleAlignment;
+        [self.calendar configureAppearance];
+    }
+}
+
 - (void)setHeaderTitleFont:(UIFont *)headerTitleFont
 {
     if (![_headerTitleFont isEqual:headerTitleFont]) {

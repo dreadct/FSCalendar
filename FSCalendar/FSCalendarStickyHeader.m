@@ -88,6 +88,7 @@
 
 - (void)configureAppearance
 {
+    _titleLabel.textAlignment = self.calendar.appearance.headerTitleAlignment;
     _titleLabel.font = self.calendar.appearance.headerTitleFont;
     _titleLabel.textColor = self.calendar.appearance.headerTitleColor;
     [self.weekdayView configureAppearance];
