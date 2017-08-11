@@ -1084,6 +1084,15 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     FSCalendarCell *cell = [self cellForDate:date
                              atMonthPosition:position];
     if (cell) {
+        NSDate *date = [self dateForCell:cell];
+        [self invalidateAppearanceForCell:cell forDate:date];
+        [cell configureAppearance];
+    }
+}
+
+- (void)invalidateVisibleCells {
+    for (FSCalendarCell *cell in self.visibleCells) {
+        NSDate *date = [self dateForCell:cell];
         [self invalidateAppearanceForCell:cell forDate:date];
         [cell configureAppearance];
     }
