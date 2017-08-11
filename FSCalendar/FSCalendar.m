@@ -1080,6 +1080,15 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     }
 }
 
+- (void)invalidateCellAppearanceForDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)position {
+    FSCalendarCell *cell = [self cellForDate:date
+                             atMonthPosition:position];
+    if (cell) {
+        [self invalidateAppearanceForCell:cell forDate:date];
+        [cell configureAppearance];
+    }
+}
+
 - (void)setScope:(FSCalendarScope)scope animated:(BOOL)animated
 {
     if (self.floatingMode) return;

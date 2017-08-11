@@ -445,6 +445,11 @@ IB_DESIGNABLE
 - (void)reloadData;
 
 /**
+ Invalidate appearance for a cell the specified date at the specified month position.
+ */
+- (void)invalidateCellAppearanceForDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)position;
+
+/**
  Change the scope of the calendar. Make sure `-calendar:boundingRectWillChange:animated` is correctly adopted.
  
  @param scope The target scope to change.
